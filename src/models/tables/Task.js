@@ -1,5 +1,5 @@
-import { sequelize } from "./connection";
-import { prop } from "./defaultProps";
+import { sequelize } from "../connection";
+import { prop } from "../defaultProps";
 
 const Task = sequelize.define("tasks", {
   priority: prop("INTEGER", { defaultValue: 0 }),

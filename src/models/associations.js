@@ -1,11 +1,11 @@
-import Task from "./Task";
-import Client from "./Client";
-import User from "./User";
-import Update from "./Update";
-import State from "./State";
-import Type from "./Type";
+import Task from "./tables/Task";
+import Client from "./tables/Client";
+import User from "./tables/User";
+import Update from "./tables/Update";
+import State from "./tables/State";
+import Type from "./tables/Type";
 
-const intermediateTable = { through: 'task_updates', timestamps: false };
+// const intermediateTable = (tableName) => { through: tableName, timestamps: false };
 
 export const syncAssociations = () => {
   User.hasMany(Task);
@@ -20,6 +20,11 @@ export const syncAssociations = () => {
   Type.hasMany(Update);
   Update.belongsTo(Type);
 
-  Task.belongsToMany(Update, intermediateTable);
-  Update.belongsToMany(Task, intermediateTable);
+  Client.hasMany(Update);
+  Update.belongsTo(Client);
+
+  Task.hasMany(Update);
+  Update.belongsTo(Task);
+  // Task.belongsToMany(Update, intermediateTable('task_updates'));
+  // Update.belongsToMany(Task, intermediateTable('task_updates'));
 };

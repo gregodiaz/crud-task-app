@@ -1,5 +1,5 @@
-import { sequelize } from "./connection";
-import { prop } from "./defaultProps";
+import { sequelize } from "../connection";
+import { prop } from "../defaultProps";
 
 const User = sequelize.define("users", {
   firstName: prop("STRING"),

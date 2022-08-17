@@ -7,9 +7,10 @@ export const sequelize = new Sequelize(
   {
     host: "localhost",
     dialect: "postgres",
-    dialectOptions: { supportBigNumbers: true },
+    dialectOptions: {
+      supportBigNumbers: true,
+    },
 
     logging: false,
   }
 );
-
