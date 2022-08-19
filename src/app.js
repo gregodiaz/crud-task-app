@@ -11,7 +11,7 @@ import taskRouter from "./routes/task";
 
 // inits
 const app = express();
-// syncTables();
+syncTables();
 
 // middlewares
 app.use(json());

@@ -25,6 +25,4 @@ export const syncAssociations = () => {
 
   Task.hasMany(Update);
   Update.belongsTo(Task);
-  // Task.belongsToMany(Update, intermediateTable('task_updates'));
-  // Update.belongsToMany(Task, intermediateTable('task_updates'));
 };

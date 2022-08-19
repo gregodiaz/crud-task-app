@@ -1,11 +1,11 @@
-import Client from "../models/tables/Client";
+import { createClient } from "../services/client";
 
-export const createClient = async (req, res, next) => {
+export const storeClient = async (req, res, next) => {
   try {
-    const { businessName, cuit, owner, franchises } = req.body;
-    await Client.create({ businessName, cuit, owner, franchises });
+    const data = req.body
+    const newClient = await createClient(data)
 
-    res.send(`New client: '${businessName}' created`);
+    res.send(`New client: '${newClient.businessName}' created`);
   } catch (error) {
     console.log("error:", error.message);
     res.send('Oops! something went wrong!')
