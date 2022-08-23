@@ -8,6 +8,8 @@ import userRouter from "./routes/user";
 import clientRouter from "./routes/client";
 import taskRouter from "./routes/task";
 import updateRouter from "./routes/update";
+import stateRouter from "./routes/state";
+import typeRouter from "./routes/type";
 
 // inits
 const app = express();
@@ -23,5 +25,7 @@ app.use("/user", userRouter);
 app.use("/client", clientRouter);
 app.use("/task", taskRouter);
 app.use("/update", updateRouter);
+app.use("/state", stateRouter);
+app.use("/type", typeRouter);
 
 export default app;

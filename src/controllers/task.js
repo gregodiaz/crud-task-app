@@ -7,7 +7,7 @@ export const storeTask = async (req, res, next) => {
 
     res.send(`New task: '${newTask.title}' created`);
   } catch (error) {
-    console.log("error:", error.message);
+    console.log("Error:", error.message);
     res.send("Oops! something went wrong!");
   }
 };

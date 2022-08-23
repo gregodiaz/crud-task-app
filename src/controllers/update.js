@@ -12,7 +12,7 @@ export const storeUpdate = async (req, res, next) => {
 
     res.send(`New update: '${newUpdate.description}' created`);
   } catch (error) {
-    console.log("error:", error.message);
+    console.log("Error:", error.message);
     res.send("Oops! something went wrong!");
   }
 };

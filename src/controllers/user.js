@@ -7,7 +7,7 @@ export const storeUser = async (req, res, next) => {
 
     res.send(`New user: '${newUser.lastName}' created`);
   } catch (error) {
-    console.log("error:", error.message);
+    console.log("Error:", error.message);
     res.send('Oops! something went wrong!')
   }
 };

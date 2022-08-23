@@ -7,7 +7,7 @@ export const storeClient = async (req, res, next) => {
 
     res.send(`New client: '${newClient.businessName}' created`);
   } catch (error) {
-    console.log("error:", error.message);
+    console.log("Error:", error.message);
     res.send('Oops! something went wrong!')
   }
 };
