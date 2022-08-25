@@ -7,7 +7,7 @@ import { handleError } from "../src/controllers";
 import userRouter from "./routes/user";
 import clientRouter from "./routes/client";
 import taskRouter from "./routes/task";
-import updateRouter from "./routes/update";
+import commentRouter from "./routes/comment";
 import stateRouter from "./routes/state";
 import typeRouter from "./routes/type";
 
@@ -24,7 +24,7 @@ app.use(handleError);
 app.use("/user", userRouter);
 app.use("/client", clientRouter);
 app.use("/task", taskRouter);
-app.use("/update", updateRouter);
+app.use("/comment", commentRouter);
 app.use("/state", stateRouter);
 app.use("/type", typeRouter);
 
