@@ -7,14 +7,17 @@ export const storeType = async (req, res, next) => {
 
     res.send(`New type: '${newType.description}' created`);
   } catch (error) {
-    console.log("Error:", error.message);
-    res.send("Oops! something went wrong!");
+    next(error);
   }
 };
 
 export const eraseType = async (req, res, next) => {
-  const { id } = req.params;
-  await deleteType(id);
+  try {
+    const { id } = req.params;
+    await deleteType(id);
 
-  res.send(`The type was deleted`);
+    res.send(`The type was deleted`);
+  } catch (error) {
+    next(error);
+  }
 };
