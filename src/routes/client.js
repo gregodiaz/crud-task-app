@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { createClient } from "../controllers/client";
+import { storeClient } from "../controllers/client";
 
 const router = Router();
 
-router.post('/', createClient);
+router.post('/', storeClient);
 
 export default router;

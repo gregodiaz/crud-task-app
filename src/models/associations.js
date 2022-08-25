@@ -1,30 +1,26 @@
 import Task from "./tables/Task";
 import Client from "./tables/Client";
 import User from "./tables/User";
-import Update from "./tables/Update";
+import Comment from "./tables/Comment";
 import State from "./tables/State";
 import Type from "./tables/Type";
 
 // const intermediateTable = (tableName) => { through: tableName, timestamps: false };
 
-export const syncAssociations = () => {
-  User.hasMany(Task);
-  Task.belongsTo(User);
+User.hasMany(Task);
+Task.belongsTo(User);
 
-  Client.hasMany(Task);
-  Task.belongsTo(Client);
+Client.hasMany(Task);
+Task.belongsTo(Client);
 
-  State.hasMany(Task);
-  Task.belongsTo(State);
+State.hasMany(Task);
+Task.belongsTo(State);
 
-  Type.hasMany(Update);
-  Update.belongsTo(Type);
+Type.hasMany(Comment);
+Comment.belongsTo(Type);
 
-  Client.hasMany(Update);
-  Update.belongsTo(Client);
+User.hasMany(Comment);
+Comment.belongsTo(User);
 
-  Task.hasMany(Update);
-  Update.belongsTo(Task);
-  // Task.belongsToMany(Update, intermediateTable('task_updates'));
-  // Update.belongsToMany(Task, intermediateTable('task_updates'));
-};
+Task.hasMany(Comment);
+Comment.belongsTo(Task);

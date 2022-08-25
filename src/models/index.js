@@ -1,8 +1,7 @@
 import { sequelize } from "./connection";
-import { syncAssociations } from "./associations";
+import "./associations";
 
 export const syncTables = async () => {
-  syncAssociations();
   try {
     await sequelize.sync({ alter: true });
     console.log("All tables synchronized");

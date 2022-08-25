@@ -1,8 +1,8 @@
 import { sequelize } from "../connection";
 import { prop } from "../defaultProps";
 
-const Update = sequelize.define("updates", {
+const Comment = sequelize.define("comments", {
   description: prop("STRING"),
 });
 
-export default Update;
+export default Comment;

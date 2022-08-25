@@ -1,13 +1,13 @@
-import User from "../models/tables/User";
+import { createUser } from "../services/user";
 
-export const createUser = async (req, res, next) => {
+export const storeUser = async (req, res, next) => {
   try {
-    const { firstName, lastName } = req.body;
-    await User.create({ firstName, lastName });
+    const data = req.body
+    const newUser = await createUser(data)
 
-    res.send(`New user: '${lastName}, ${firstName}' created`);
+    res.send(`New user: '${newUser.lastName}' created`);
   } catch (error) {
-    console.log("error:", error.message);
+    console.log("Error:", error.message);
     res.send('Oops! something went wrong!')
   }
 };
